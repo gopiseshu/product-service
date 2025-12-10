@@ -45,7 +45,7 @@ pipeline {
                 withKubeConfig(credentialsId: 'kubeconfig') {
                     sh """
                         kubectl set image deployment/product-service-deployment \
-                        user-service=${IMAGE_NAME}:${IMAGE_TAG} --record
+                        product-service=${IMAGE_NAME}:${IMAGE_TAG} --record
                     """
                 }
             }
